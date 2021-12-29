@@ -1,0 +1,39 @@
+@model IEnumerable<Turnos.Models.Especialidad>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+        <title>Index Especialidad</title>
+    </head>
+    <body>
+        <p>
+            <a asp-action="Create" class="btn-floating btn-large waves-light red"><i class="material-icons">person_add</i></a>
+        </p>
+        <table class="responsive-table highlight z-depth-3 blue lighten-5">
+            <thead class="waves-light red white-text">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descripcion)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @*Asi colocamos comentarios en un archivo cshtml*@
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+            
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdEspecialidad"><i class="material-icons waves-light red-text">edit</i></a>  
+                        <a asp-action="Delete" asp-route-id="@item.IdEspecialidad"><i class="material-icons waves-light red-text">delete</i></a>
+                    </td>            
+                </tr>    
+                }
+            </tbody>
+        </table>
+    </body>
+</html>

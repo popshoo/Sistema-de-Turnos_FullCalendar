@@ -1,0 +1,57 @@
+@model IEnumerable<Turnos.Models.Paciente>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width">
+        <title>Index</title>
+    </head>
+    <p>
+        <a asp-action="Create" class="btn-floating btn-large waves-light red"><i class="material-icons">person_add</i></a>
+    </p>
+
+<table class="responsive-table highlight z-depth-3 blue lighten-5"> 
+    <thead class="waves-light red white-text">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Telefono)
+            </th>
+            <th></th>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@Html.DisplayFor(modeloItem => item.Nombre)</td>
+        
+                    <td>@Html.DisplayFor(modeloItem => item.Apellido)</td>
+            
+                    <td>@Html.DisplayFor(modeloItem => item.Email)</td>
+            
+                    <td>@Html.DisplayFor(modeloItem => item.Direccion)</td>
+        
+                    <td>@Html.DisplayFor(modeloItem => item.Telefono)</td>
+                
+                    <td>   
+                        <a asp-action="Edit" asp-route-id="@item.IdPaciente">   <i class="material-icons waves-light red-text">edit</i></a>    
+                        <a asp-action="Details" asp-route-id="@item.IdPaciente"> <i class="material-icons waves-light red-text">more_vert</i></a>
+                        <a asp-action="Delete" asp-route-id="@item.IdPaciente"><i class="material-icons waves-light red-text">delete</i></a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </tr>
+    </thead>
+</table>

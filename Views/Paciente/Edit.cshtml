@@ -1,0 +1,73 @@
+@model Turnos.Models.Paciente
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width">
+        <title>Edit</title>
+    </head>
+    <body>
+
+    <h4>Paciente</h4>
+
+    <div class="row">   
+        <div class="col-md-4">
+
+         <form class="col s12" asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="IdPaciente">     
+
+        <div class="row">
+
+                <div class="input-field col s6">
+                    <i class="material-icons prefix waves-light red-text">account_circle</i>
+                    <input asp-for="Nombre" type="text" class="validate">
+                    <label asp-for="Nombre">First Name</label>
+                    <span asp-validation-for="Nombre"></span>
+                </div>
+
+                <div class="input-field col s6">
+                      <i class="material-icons prefix waves-light red-text"></i>
+                      <input asp-for="Apellido" type="text" class="validate">
+                      <label asp-for="Apellido">Last Name</label>
+                      <span asp-validation-for="Apellido"></span>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix waves-light red-text">add_location_alt</i>
+                    <input asp-for="Direccion" type="tel" class="validate">
+                    <label asp-for="Direccion">Location</label>
+                    <span asp-validation-for="Direccion"></span>
+                </div>
+
+                 <div class="input-field col s12">
+                    <i class="material-icons prefix waves-light red-text">phone</i>
+                    <label asp-for="Telefono"></label>
+                    <input asp-for="Telefono" class="validate">
+                    <span asp-validation-for="Telefono"></span>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix waves-light red-text">local_post_office</i>
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="validate">
+                    <span asp-validation-for="Email"></span>
+                </div>
+
+                </div class="row">
+
+                    <div class="col s6 m6">
+                        <a class="btn waves-effect waves-light red-text blue lighten-5" asp-action="Index"><i class="material-icons left">undo</i>Retroceder</a>
+                    </div>
+
+                    <div class="col s6 m6">
+                        <button class="btn waves-effect waves-light red" type="submit" name="action">Save
+                        <i class="material-icons right">send</i>
+                        </button>
+                    </div> 
+
+    </form>
+            </div>
+        </div>
+    </body>
+</html>

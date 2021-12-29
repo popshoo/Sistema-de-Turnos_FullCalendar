@@ -1,0 +1,54 @@
+@model Turnos.Models.Medico
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width">
+        <title>Details</title>
+    </head>
+    <body>
+
+    <div>
+        <h4>Medico</h4>
+        <hr>
+        <div class="col s6 m6">
+            <div asp-validation-summary="ModelOnly"></div>
+      <div class="card blue-grey darken-1">
+        <div class="card-content highlight z-depth-3 blue lighten-5">
+          <span class="card-title"><h4><b>@Html.DisplayFor(model => model.Nombre), @Html.DisplayFor(model => model.Apellido)</b></h4></span>
+                <dt>
+                    <h6>@Html.DisplayNameFor(model => model.Email) : @Html.DisplayFor(model => model.Email)</h6>
+                </dt>
+            <hr>
+                <dt>
+                    <h6>@Html.DisplayNameFor(model => model.Direccion) : @Html.DisplayFor(model => model.Direccion)</h6>
+                </dt>
+            <hr>
+                <dt>
+                  <h6>@Html.DisplayNameFor(model => model.Telefono) : @Html.DisplayFor(model => model.Telefono)</h6>
+                </dt>
+            <hr>
+                 <dt>
+                    <h6>@Html.DisplayNameFor(model => model.HorarioAtencionDesde) : @Html.DisplayFor(model => model.HorarioAtencionDesde)</h6>
+                </dt>
+            <hr>
+                <dt>
+                    <h6>@Html.DisplayNameFor(model => model.HorarioAtencionAntes) : @Html.DisplayFor(model => model.HorarioAtencionAntes)</h6>
+                </dt>
+
+            </div>
+            <div class="card-action waves-light red z-depth-3">
+                <form asp-action="Edit">
+                    <input type="hidden" asp-for="IdMedico">
+                    <a class="white-text right" asp-action="Edit" asp-route-id="@Model.IdMedico">Modificar</a>
+                    <a class="white-text" asp-action="Index">Back To List</a>
+                </form>
+
+             </div>
+          </div>
+        </div>
+    </div>
+    
+</body>
+</html>

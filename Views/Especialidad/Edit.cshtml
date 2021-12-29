@@ -1,0 +1,37 @@
+@model Turnos.Models.Especialidad
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+        <title>Edit</title>
+    </head>
+    <body>
+        <h4>Medico</h4>
+        <hr>
+<div class="row">
+    <form class="col s12" asp-action="Edit">
+        <div asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="IdEspecialidad">
+
+        <div class="input-field col s12">
+            <i class="material-icons prefix waves-light red-text">star_rate</i>
+           <label asp-for="Descripcion"></label>
+            <input asp-for="Descripcion">
+            <span asp-validation-for="Descripcion"></span>
+        </div>
+
+            <div class="col s6 m6">
+                <a class="btn waves-effect waves-light red-text blue lighten-5" asp-action="Index"><i class="material-icons left">undo</i>Retroceder</a>
+            </div>
+
+            <div class="col s6 m6">
+                <button class="btn waves-effect waves-light red" type="submit" name="action">Save
+                <i class="material-icons right">send</i>
+                </button>
+            </div>
+        
+    </form>
+</div>
+    </body>
+</html>
